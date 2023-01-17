@@ -1,0 +1,9 @@
+# 个人博客
+## 规则：
+1. 主页名为index.html
+2. 404为404.html
+3. 图标名为Logo.png
+4. 文章名为ARTICLE(_?).html
+5. 分享名为SHARE(_?).html
+6. 个人名为ABOUT.html
+7. 所有源文件均上传
