@@ -1,10 +1,10 @@
-# 个人博客
-## 规则：
-1. 主页名为index.html
-2. 404为404.html
-3. 图标名为Logo.png
-4. 文章名为ARTICLE(_?).html
-5. 分享名为SHARE(_?).html
-6. 个人名为ABOUT.html
-7. 所有源文件均上传
-8. 以数字或t+数字命名的图片和homework.html，寒假结束可以删掉
+# 璃黯的杂货铺
+1. 主页面名为index.html
+2. 404页面为404.html
+3. 图标为Logo.png
+4. 文章页面名为ARTICLE(_{内容}).html
+5. 分享页面名为SHARE(_{内容}).html
+6. 了解璃黯页面名为ABOUT.html
+7. 除源文件需要上传到Markdown文件夹中，余下所有文件上传到根目录
+
++ 以数字或t+数字命名的图片和homework.html，寒假结束可以删掉
