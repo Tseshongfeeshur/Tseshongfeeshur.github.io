@@ -3,7 +3,7 @@
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
 .mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
@@ -203,399 +203,1063 @@ mjx-container { break-inside: avoid; }
 
 
 :root {
-    --side-bar-bg-color: #fafafa;
-    --control-text-color: #777;
+    --main-color: rgba(128, 30, 255, 1);
+    --shadow-color : rgb(178, 80, 255);
+    --transplate-color : rgba(128, 30, 255, 0.1);
+    --dark-color : rgb(70, 18, 137);
+    --light-color : rgb(248, 242, 255);
+    --font-color : rgb(12, 12, 12);
+    --base-font : "Glow Sans", "Microsoft YaHei", serif;
+    --title-font: "Roboto Slab", "Times", serif;
+    --blockquote-font : "Times", "Roboto Slab", serif;
+    --blockquote-color : rgba(117, 117, 117, 0.9);
+    --monospace: "Cascadia code", "Courier New", monospace; 
+
+    /* --background : url("https://cdn.jsdelivr.net/gh/LSTM-Kirigaya/KImage/Img/2k.jpg"); */
+
+    --quote-title-font-size : 0.9em;
+    --quote-tag-font-size : 1.1em;
+
+    /* typora GUI config */
+    --sidebar-font-color : black;
+    --main-panel-font-color : black;
 }
 
-@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
-
-/* open-sans-regular - latin-ext_latin */
-  /* open-sans-italic - latin-ext_latin */
-    /* open-sans-700 - latin-ext_latin */
-    /* open-sans-700italic - latin-ext_latin */
-  html {
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-}
-
+/* global setting */
 body {
-    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
-    color: rgb(51, 51, 51);
-    line-height: 1.6;
+    font-family: "Roboto Slab", "SimHei", serif;
+    /* background-color: rgb(255, 255, 255); */
 }
 
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: initial;
+}
+
+
+/* write is a wrapper of writable region */
 #write {
-    max-width: 860px;
-  	margin: 0 auto;
-  	padding: 30px;
-    padding-bottom: 100px;
+    position: static;
+    /* width: 90%; */
+    max-width: 1000px;
+    min-height: calc(100vh - 6rem);
+	min-width: calc(100vw - 45rem);
+    line-height: 1.6;
+    transform: none;
+    height: auto;
+    caret-color: var(--main-color);
 }
 
-@media only screen and (min-width: 1400px) {
-	#write {
-		max-width: 1024px;
-	}
+/*#write h1, h2, h3, h4, h5, h6 {
+    color: var(--font-color);
+    font-family: var(--title-font);
+    font-weight: 800;
+    line-height: 1.5;
+    margin: 0 0 1em 0;
 }
 
-@media only screen and (min-width: 1800px) {
-	#write {
-		max-width: 1200px;
-	}
+#write h1 {
+    font-size: 40px;
+    margin: 0 0 1.0em 0;
+    line-height: 1.3; 
+    border-bottom: solid 3px var(--main-color);
+    width: fit-content;
 }
 
-#write > ul:first-child,
-#write > ol:first-child{
-    margin-top: 30px;
+#write h2 {
+    font-size: 28px;
+    border-radius: .5em;
+    width: fit-content;
+}
+
+#write h2::before {
+    content: "H2";
+    border-radius: .3em;
+    font-size: .8em;
+    padding: 3px 7px;
+    margin-right: 15px;
+    background-color: var(--main-color);
+    color: white;
+}
+
+#write h3 {
+    font-size: 24px;
+    border-radius: .3em; 
+    width: fit-content;
+}
+
+#write h3::before {
+    content: "H3";
+    color : white;
+    font-size: 0.8em;
+    background-color: var(--main-color);
+    border-radius: .3em;
+    margin-right: 12px;
+    padding: 4px 7px;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    vertical-align: baseline;
+    border-width: 0;
+}
+
+#write h4 {
+    font-size: 20px;
+}
+
+#write h5 {
+    font-size: 16px;
+}
+
+#write hr {
+    width: 60%;
+    text-align:center;
+    border-bottom: solid 1.8px var(--main-color);
+    margin: 4.5em auto;
+}
+*/
+
+#write img {
+    border-radius: 1.5em !important;
+    box-shadow: 0 0 10px 3px rgba(134, 136, 137, 0.8);
+    transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+}
+
+/* #write img:hover {
+    box-shadow: 0 0 10px 5px var(--shadow-color);
+    transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+} */
+
+
+#write blockquote {
+    padding: 10px 10px;
+    font-size: var(--quote-title-font-size);
+    color: var(--blockquote-color);
+    border-left: 6px solid var(--main-color);
+    background: var(--light-color);
+    border-radius : 0.5em;
+    font-family: var(--blockquote-font);
+    line-height: 35px;
+}
+
+#write blockquote span {
+    word-break: break-all;
+}
+
+#write blockquote h1 {
+    font-weight: 200;
+    font-size: var(--quote-tag-font-size);
+    border-bottom: none;
+    font-family: var(--base-font);
+    line-height: 35px;
+}
+
+#write blockquote h1::before {
+    content: "Tips";
+    background-color: var(--main-color);
+    font-family: var(--title-font);
+    color: white;
+    font-size: var(--quote-tag-font-size);
+    border-radius: .3em;
+    padding: 3px 7px;
+    margin-right: 15px;
+}
+
+#write blockquote h2 {
+    font-weight: 200;
+    font-size: var(--quote-tag-font-size);
+    font-family: var(--base-font);
+    line-height: 35px;
+}
+
+#write blockquote h2::before {
+    content: "Warning";
+    background-color: rgb(207, 210, 16);
+    font-family: var(--title-font);
+    color: white;
+    font-size: var(--quote-tag-font-size);
+    border-radius: .3em;
+    padding: 3px 7px;
+    margin-right: 15px;
+}
+
+#write blockquote h3 {
+    font-weight: 200;
+    font-size: var(--quote-tag-font-size);
+    font-family: var(--base-font);
+    line-height: 35px;
+}
+
+#write blockquote h3::before {
+    content: "Error";
+    background-color: rgb(224, 66, 66);
+    font-family: var(--title-font);
+    color: white;
+    font-size: var(--quote-tag-font-size);
+    border-radius: .3em;
+    padding: 3px 7px;
+    margin-right: 15px;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    vertical-align: baseline;
+    border-width: 0;
+}
+
+#write blockquote h4 {
+    font-weight: 200;
+    font-size: var(--quote-tag-font-size);
+    font-family: var(--base-font);
+    line-height: 35px;
+}
+
+#write blockquote h4::before {
+    content: "Remind";
+    background-color: var(--shadow-color);
+    font-family: var(--title-font);
+    color: white;
+    font-size: var(--quote-tag-font-size);
+    border-radius: .3em;
+    padding: 3px 7px;
+    margin-right: 15px;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    vertical-align: baseline;
+    border-width: 0;
+}
+
+#write blockquote h5 {
+    font-weight: 200;
+    font-size: var(--quote-tag-font-size);
+    font-family: var(--base-font);
+    line-height: 35px;
+}
+
+#write blockquote h5::before {
+    content: "Remind";
+    background-color: var(--shadow-color);
+    font-family: var(--title-font);
+    color: white;
+    font-size: var(--quote-tag-font-size);
+    border-radius: .3em;
+    padding: 3px 7px;
+    margin-right: 15px;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    vertical-align: baseline;
+    border-width: 0;
+}
+
+
+/* code block */
+#write pre.md-fences {
+	padding: 1rem 0.5rem 1rem;
+	display: block;
+	-webkit-overflow-scrolling: touch;
+	/* box-shadow: 0 0 6px 2px rgba(151, 151, 151, 0.9); */
+    /* border-top: rgb(51, 51, 51) solid 35px; */
+    border-top: rgb(244, 244, 244) solid 35px;
+    background-color: rgb(244, 244, 244);
+}
+
+
+pre.md-fences::before {
+	content: ' ';
+	background: var(--main-color);
+	box-shadow: 23px 0 rgb(128, 128, 128), 45px 0 gray;
+	border-radius: 50%;
+	margin-top: -2.3rem;
+	position: absolute;
+	left: 15px;
+	height: 12px;
+	width: 12px;
+}
+
+#write pre.md-fences {
+	line-height: 1.5rem;
+	font-size: .9rem;
+	font-weight: 300;
+	border-radius: .7em;
+    font-family: var(--monospace) !important;
+}
+
+/* inline code */
+code {
+    margin: 0 2px;
+    padding: 4px 6px;
+    color: #666363;
+    white-space: pre-wrap;
+    background: var(--light-color);
+    border-radius: 8px;
+}
+
+#write blockquote code {
+    margin: 0 2px;
+    padding: 4px 6px;
+    color: white;
+    white-space: pre-wrap;
+    background: var(--main-color);
+    border-radius: 8px;
+}
+
+kbd,
+samp,
+tt,
+var {
+	font-family: var(--monospace) !important;
+}
+
+
+/* YAML */
+pre.md-meta-block {
+    font-size: .8rem;
+    min-height: .8rem;
+    white-space: pre-wrap;
+    background: var(--main-color);
+    display: block;
+    overflow-x: hidden;
+    padding: 15px;
+    font-family: var(--monospace);
+    border-radius: 1.2em;
+    color: white;
+    caret-color: white;
+}
+
+
+/* Math */
+#math-inline-preview-content .MathJax {
+    color: white !important;
+}
+
+/* table */
+#write table
+{
+    width: 95%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: var(--monospace);
+    margin: 20px;
+}
+#write table td, table th
+{
+    border: 1px solid transparent;
+    color: rgb(18, 18, 18);
+    height: 30px;
+    padding: 10px;
+    border-radius: .5em;
+    transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+}
+#write table td {
+    font-family: var(--title-font);
+}
+#write table thead th
+{
+    background-color: var(--shadow-color);
+    font-size: 20px;
+    color: white;
+    font-weight: bolder;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+table tr:nth-child(odd)
+{
+    background: white;
+}
+table tr:nth-child(even)
+{
+    background: var(--light-color);
+}
+table td:hover {
+  background-color: var(--shadow-color) !important;
+  color: white !important;
+  box-shadow: 0 0 10px 5px var(--shadow-color);
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+}
+
+
+/* main element consisting of your text */
+p {
+    color: var(--font-color);
+    margin: 0 0 2em 0;  
+    font-weight: 500;
+    line-height: 1.6;
+    font-family: var(--base-font);
 }
 
 a {
-    color: #4183C4;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    position: relative;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    line-height: 1.4;
-    cursor: text;
-}
-h1:hover a.anchor,
-h2:hover a.anchor,
-h3:hover a.anchor,
-h4:hover a.anchor,
-h5:hover a.anchor,
-h6:hover a.anchor {
+    color: var(--main-color);
+    font-weight: 500;
     text-decoration: none;
-}
-h1 tt,
-h1 code {
-    font-size: inherit;
-}
-h2 tt,
-h2 code {
-    font-size: inherit;
-}
-h3 tt,
-h3 code {
-    font-size: inherit;
-}
-h4 tt,
-h4 code {
-    font-size: inherit;
-}
-h5 tt,
-h5 code {
-    font-size: inherit;
-}
-h6 tt,
-h6 code {
-    font-size: inherit;
-}
-h1 {
-    font-size: 2.25em;
-    line-height: 1.2;
-    border-bottom: 1px solid #eee;
-}
-h2 {
-    font-size: 1.75em;
-    line-height: 1.225;
-    border-bottom: 1px solid #eee;
+    text-decoration-style: none;
+    cursor: pointer;
+    padding: 0 3px 0 3px;
 }
 
-/*@media print {
-    .typora-export h1,
-    .typora-export h2 {
-        border-bottom: none;
-        padding-bottom: initial;
-    }
 
-    .typora-export h1::after,
-    .typora-export h2::after {
-        content: "";
-        display: block;
-        height: 100px;
-        margin-top: -96px;
-        border-top: 1px solid #eee;
-    }
-}*/
+/* list */
 
-h3 {
-    font-size: 1.5em;
-    line-height: 1.43;
-}
-h4 {
-    font-size: 1.25em;
-}
-h5 {
-    font-size: 1em;
-}
-h6 {
-   font-size: 1em;
-    color: #777;
-}
-p,
-blockquote,
-ul,
 ol,
-dl,
-table{
-    margin: 0.8em 0;
-}
-li>ol,
-li>ul {
-    margin: 0 0;
-}
-hr {
-    height: 2px;
-    padding: 0;
-    margin: 16px 0;
-    background-color: #e7e7e7;
-    border: 0 none;
-    overflow: hidden;
-    box-sizing: content-box;
+ul {
+  padding-left: 2em;
+  line-height: 2;
 }
 
-li p.first {
+ul>li>ul>li {
+    list-style-type: circle;
+  }
+  
+ul>li>ul>li>ul>li {
+    list-style-type: square;
+}
+
+
+iframe {
+    border-radius: 1.2em;
+    box-shadow: 0 0 8px 3px rgba(181, 181, 182, 0.9);
+}
+
+
+/* checkbox */
+.md-task-list-item:hover > input:before,
+input[type='checkbox']:hover:before {
+	opacity: 1;
+	transition: 0.3s;
+	background-color: var(--shadow-color);
+}
+
+.task-list-item input::before {
+    content: "";
     display: inline-block;
-}
-ul,
-ol {
-    padding-left: 30px;
-}
-ul:first-child,
-ol:first-child {
-    margin-top: 0;
-}
-ul:last-child,
-ol:last-child {
-    margin-bottom: 0;
-}
-blockquote {
-    border-left: 4px solid #dfe2e5;
-    padding: 0 15px;
-    color: #777777;
-}
-blockquote blockquote {
-    padding-right: 0;
-}
-table {
-    padding: 0;
-    word-break: initial;
-}
-table tr {
-    border: 1px solid #dfe2e5;
-    margin: 0;
-    padding: 0;
-}
-table tr:nth-child(2n),
-thead {
-    background-color: #f8f8f8;
-}
-table th {
-    font-weight: bold;
-    border: 1px solid #dfe2e5;
-    border-bottom: 0;
-    margin: 0;
-    padding: 6px 13px;
-}
-table td {
-    border: 1px solid #dfe2e5;
-    margin: 0;
-    padding: 6px 13px;
-}
-table th:first-child,
-table td:first-child {
-    margin-top: 0;
-}
-table th:last-child,
-table td:last-child {
-    margin-bottom: 0;
+	border-radius: .3em;
+    vertical-align: middle;
+    border: 1.2px solid var(--main-color);
+    background-color: #ffffff;
+	width: 1.1rem;
+    height: 1.1rem;
+	margin-left: -0.1rem;
+    margin-right: 0.1rem;
+    margin-top: -0.68rem; 
 }
 
-.CodeMirror-lines {
-    padding-left: 4px;
-}
-
-.code-tooltip {
-    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
-    border-top: 1px solid #eef2f2;
-}
-
-.md-fences,
-code,
-tt {
-    border: 1px solid #e7eaed;
-    background-color: #f8f8f8;
-    border-radius: 3px;
-    padding: 0;
-    padding: 2px 4px 0px 4px;
-    font-size: 0.9em;
-}
-
-code {
-    background-color: #f3f4f4;
-    padding: 0 2px 0 2px;
-}
-
-.md-fences {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding-top: 8px;
-    padding-bottom: 6px;
+.task-list-item input:checked::before {
+    padding-left: 0.125em;
+    content: '✔';
+    color:white;
+	background-color: var(--main-color);
+    font-size: 0.8rem;
+    line-height: 0.95rem;
+    margin-top: -0.68rem;
+	transition: background-color 200ms ease-in-out;
 }
 
 
-.md-task-list-item > input {
-  margin-left: -1.3em;
+
+
+
+#footer-word-count-label {
+    font-family: var(--title-font) !important;
+    color: white;
+    padding: 1px 8px;
+    border-radius: 1.0em;
+    background-color: var(--main-color);
 }
 
-@media print {
-    html {
-        font-size: 13px;
-    }
-    pre {
-        page-break-inside: avoid;
-        word-wrap: break-word;
-    }
+/* bg color when text is selected */
+div::selection {
+background: var(--main-color);
+color: white;
+}
+  
+div::-moz-selection {
+background: var(--main-color);
+color: white;
 }
 
-.md-fences {
-	background-color: #f8f8f8;
-}
-#write pre.md-meta-block {
-	padding: 1rem;
-    font-size: 85%;
-    line-height: 1.45;
-    background-color: #f7f7f7;
-    border: 0;
-    border-radius: 3px;
-    color: #777777;
-    margin-top: 0 !important;
+div::-webkit-selection {
+background: var(--main-color);
+color: white;
 }
 
-.mathjax-block>.code-tooltip {
-	bottom: .375rem;
+blockquote::selection {
+background: var(--main-color);
+color: white;
 }
 
-.md-mathjax-midline {
-    background: #fafafa;
+blockquote::-moz-selection {
+background: var(--main-color);
+color: white;
 }
 
-#write>h3.md-focus:before{
-	left: -1.5625rem;
-	top: .375rem;
-}
-#write>h4.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h5.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h6.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-.md-image>.md-meta {
-    /*border: 1px solid #ddd;*/
-    border-radius: 3px;
-    padding: 2px 0px 0px 4px;
-    font-size: 0.9em;
-    color: inherit;
+blockquote::-webkit-selection {
+background: var(--main-color);
+color: white;
 }
 
-.md-tag {
-    color: #a7a7a7;
-    opacity: 1;
+p::selection {
+background: var(--main-color);
+color: white;
 }
 
-.md-toc { 
-    margin-top:20px;
-    padding-bottom:20px;
+p::-moz-selection {
+background: var(--main-color);
+color: white;
 }
 
-.sidebar-tabs {
-    border-bottom: none;
+p::-webkit-selection {
+background: var(--main-color);
+color: white;
 }
 
-#typora-quick-open {
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
+label::selection {
+background: var(--main-color);
+color: white;
 }
 
-#typora-quick-open-item {
-    background-color: #FAFAFA;
-    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
-    border-style: solid;
-    border-width: 1px;
+label::-moz-selection {
+background: var(--main-color);
+color: white;
 }
 
-/** focus mode */
-.on-focus-mode blockquote {
-    border-left-color: rgba(85, 85, 85, 0.12);
+label::-webkit-selection {
+background: var(--main-color);
+color: white;
 }
 
-header, .context-menu, .megamenu-content, footer{
-    font-family: "Segoe UI", "Arial", sans-serif;
+span::selection {
+background: var(--main-color);
+color: white;
 }
 
-.file-node-content:hover .file-node-icon,
-.file-node-content:hover .file-node-open-state{
-    visibility: visible;
+span::-moz-selection {
+background: var(--main-color);
+color: white;
 }
 
-.mac-seamless-mode #typora-sidebar {
-    background-color: #fafafa;
-    background-color: var(--side-bar-bg-color);
+span::-webkit-selection {
+background: var(--main-color);
+color: white;
 }
 
-.md-lang {
-    color: #b4654d;
+h1::selection {
+background: var(--main-color);
+color: white;
 }
 
-/*.html-for-mac {
-    --item-hover-bg-color: #E6F0FE;
-}*/
+h1::-moz-selection {
+background: var(--main-color);
+color: white;
+}
 
-#md-notification .btn {
-    border: 0;
+h1::-webkit-selection {
+background: var(--main-color);
+color: white;
+}
+
+h2::selection {
+background: var(--main-color);
+color: white;
+}
+
+h2::-moz-selection {
+background: var(--main-color);
+color: white;
+}
+
+h2::-webkit-selection {
+background: var(--main-color);
+color: white;
+}
+
+h3::selection {
+background: var(--main-color);
+color: white;
+}
+
+h3::-moz-selection {
+background: var(--main-color);
+color: white;
+}
+
+h3::-webkit-selection {
+background: var(--main-color);
+color: white;
+}
+
+h4::selection {
+background: var(--main-color);
+color: white;
+}
+
+h4::-moz-selection {
+background: var(--main-color);
+color: white;
+}
+
+h4::-webkit-selection {
+background: var(--main-color);
+color: white;
+}
+
+h5::selection {
+background: var(--main-color);
+color: white;
+}
+
+h5::-moz-selection {
+background: var(--main-color);
+color: white;
+}
+
+h5::-webkit-selection {
+background: var(--main-color);
+color: white;
+}
+
+code::selection {
+background: var(--main-color);
+color: white;
+}
+
+code::-moz-selection {
+background: var(--main-color);
+color: white;
+}
+
+code::-webkit-selection {
+background: var(--main-color);
+color: white;
+}
+
+
+/* outside */
+
+
+#megamenu-content {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#megamenu-menu-panel {
+    font-family: var(--title-font);
+    padding: 10px;
+}
+
+.megamenu-menu-panel {
+    padding: 10px;
+}
+
+
+.megamenu-menu-header-title-menu {
+    color: var(--sidebar-font-color);
+}
+
+.megamenu-menu-header-title-back {
+    color: var(--sidebar-font-color);
+}
+
+
+/* sidebar */
+.megamenu-menu-header {
+    width: 60%;
+    text-align:center;
+    border-bottom: solid 3px var(--main-color);
+}
+#megamenu-menu-sidebar {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--sidebar-font-color);
+    box-shadow: 0 0 8px 4px rgb(100 100 100 / 80%);
+    margin-top: 3%;
+    height: 92%;
+    border-radius: 0 4em 4em 0;
+}
+#megamenu-back-btn {
+    border-radius: 1.2em;
+    color: var(--main-color);
+    transition: all linear .3s;
+    padding: 0 0 10px;
+}
+
+#megamenu-back-btn:hover {
+    background-color: var(--main-color);
+    color: white;
+    border: 2px solid white;
+    transition: all linear .3s;
+}
+
+#megamenu-menu-list > li {
+    transition: all linear .3s;
+}
+
+#megamenu-menu-list > li:hover {
+    transition: all linear .3s;
+    border-top-left-radius: 1.2em;
+    border-bottom-left-radius: 1.2em;
+}
+
+#megamenu-menu-list > li:focus {
+    transition: all linear .3s;
+    color : white;
+    background-color: var(--shadow-color);
+    width: fit-content;
+    border-top-right-radius: 1.2em;
+    border-bottom-right-radius: 1.2em;
 }
 
 .dropdown-menu .divider {
-    border-color: #e5e5e5;
-    opacity: 0.4;
+    width: 30%;
+    color: var(--main-color);
+    background-color: var(--main-color);
+}
+.megamenu-menu-list li a {
+    transition: all linear .3s;
+    width: fit-content;
+    padding-right: 60px;
 }
 
-.ty-preferences .window-content {
-    background-color: #fafafa;
+.megamenu-menu-list li a:hover {
+    transition: all linear .3s;
+    color: white !important;
+    background-color: var(--main-color) !important;
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
 }
 
-.ty-preferences .nav-group-item.active {
+.megamenu-menu-list li a.active, .megamenu-menu-list:not(.saved) li a:hover {
+    color: white !important;
+    background-color: var(--main-color) !important;
+    border-bottom-right-radius: 2em;
+    border-top-right-radius: 2em;
+}
+
+
+/* open */
+#m-open-local,
+#m-import-local {
+    border-radius: 1.2em;
+}
+
+#m-open-local:hover,
+#m-import-local:hover {
+    border: 1px solid var(--shadow-color);
+}
+
+#recent-file-panel-search-input {
+    border-radius: 1.2em;
+    transition: all linear .3s;
+    font-family: var(--title-font);
+}
+#recent-file-panel-action-btn {
+    border-radius: 1.2em;  
+}
+
+#recent-file-panel-search-input:hover {
+    transition: all linear .3s;
+    box-shadow: 0 0 10px 3px var(--shadow-color);
+}
+
+#recent-file-panel-search-input:focus {
+    transition: all linear .3s;
     color: white;
-    background: #999;
+    border: none;
+    background-color: var(--shadow-color);
 }
 
-.menu-item-container a.menu-style-btn {
-    background-color: #f5f8fa;
-    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+/* side bar Ctrl Shift 2 */
+/* .typora-node.pin-outline:not(.megamenu-opened):not(.typora-sourceview-on) #typora-sidebar {
+    display: block;
+    left: 0;
+    transition: left .3s;
+    border-radius: 0em 3em 3em 0em;
+    box-shadow: 0 0 8px 3px rgb(100 100 100 / 80%);
+    margin-top: 20px;
+    margin-bottom: 5%;
+    height: 95%;
+    padding-right: 10px;
+} */
+
+.info-panel-tab-border {
+    color: var(--main-color) !important;
+    background-color: var(--main-color) !important;
 }
 
+.outline-content {
+    padding: 3px 18px 3px 0;
+}
+
+.outline-item {
+    margin-left: -20px;
+    margin-right: -20px;
+    border-left: 20px solid transparent;
+    border-right: 16px solid transparent;
+}
+
+.outline-item:hover {
+    background-color: var(--shadow-color);
+    color: white;
+}
+
+.active-tab-files  #info-panel-tab-file .info-panel-tab-title {
+    background-color: var(--main-color);
+    color: white;
+    padding: 5px 5px;
+    border-radius: 1.2em;
+    transition: all linear .3s;
+}
+
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-title {
+    background-color: var(--main-color);
+    color: white;
+    padding: 5px 5px;
+    border-radius: 1.2em;
+    transition: all linear .3s;
+}
+
+.ty-show-search #info-panel-tab-search  .info-panel-tab-title {
+    background-color: var(--main-color);
+    color: white;
+    padding: 5px 5px;
+    border-radius: 1.2em;
+    transition: all linear .3s;
+}
+
+
+#file-library-search-input {
+    border-radius: .5em;
+}
+
+#file-library-search-input:focus {
+    border: 2px solid var(--main-color);
+}
+
+.info-panel-tab-border {
+    display: none;
+}
+div#file-library-list-children {
+    transition: all linear .3s;
+}
+
+.file-list-item.active {
+    border-top-right-radius: 2.2em;
+    border-bottom-right-radius: 2.2em;
+    width: fit-content;
+    background-color: var(--main-color) !important;
+    color: white;
+    transition: all linear .3s;
+}
+
+.outline-item-active {
+    border-top-right-radius: 2.2em;
+    border-bottom-right-radius: 2.2em;
+    width: fit-content;
+    background-color: var(--main-color) !important;
+    color: white;
+    transition: all linear .3s;
+}
+
+
+/* theme */
+.theme-preview-div.active, .theme-preview-div.active:hover {
+    border-color: var(--main-color);
+}
+#theme-preview-grid {
+    max-width: 100% !important;
+}
+#open-theme-folder-btn {
+    transition: all .3s;
+    border-radius: 2em;
+    border: none;
+    color: white !important;
+    background-color: var(--main-color);
+}
+#open-theme-folder-btn:hover {
+    transition: all .3s;
+    color: white !important;
+    background-color: var(--shadow-color);
+}
+
+/* export */
+.long-btn {
+    transition: all .3s;
+    border-radius: 2em;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.long-btn:hover {
+    transition: all .3s;
+    color: white !important;
+    background-color: var(--main-color);
+}
+
+.long-btn-wrap {
+    padding: 10px;
+}
+
+.megamenu-section-export {
+    font-family: var(--title-font) !important;
+}
+
+
+.megamenu-menu-panel h1 {
+    padding-bottom: 10px;
+    width: fit-content !important;
+    border-bottom: var(--main-color) solid 3px;
+}
+
+.megamenu-menu-panel h2::before {
+    content: "H2";
+    border-radius: .3em;
+    font-size: 25px;
+    padding: 3px 7px;
+    margin: 5px 15px 5px 1px;
+    background-color: var(--main-color);
+    color: white;
+}
+
+
+/* modal exit dialog */
+.btn-primary {
+    transition: all .3 linear;
+    border-radius: 1.2em;
+    background-color: var(--main-color);
+}
+
+.btn-default {
+    transition: all .3 linear;
+    border-radius: 1.2em;
+    border: var(--main-color) 3px solid;
+    color: var(--main-color);
+    background-color: white;
+}   
+
+.btn-primary:hover,
+.btn-default:hover {
+    transition: all .3 linear;
+    color: white;
+    background-color: var(--shadow-color);  
+}
+
+.btn-primary:focus,
+.btn-default:focus {
+    transition: all .3 linear;
+    color: white;
+    background-color: var(--main-color);
+}
+
+.modal-content {
+    border-radius: 1.5em;
+    border: none;
+}
+
+.ImgCaption {
+    padding-top: 0;
+    margin-top: 0;
+    border-bottom: 2px solid var(--shadow-color);
+    width: fit-content;
+  }
+
+/* Perference */
+.nav-group-item-item:hover {
+    transition: all .3s;
+    border: 2px solid var(--main-color);
+}
+.nav-group-item.active {
+    color: white;
+    font-family: var(--title-font);
+    transition: all .3s;
+    border-radius: 1.5em;
+    padding: 6px 11px 6px 11px;
+}
+.nav-group-item {
+    transition: all .3s;
+    border-radius: 1.5em;
+    width: fit-content;
+    cursor: pointer;
+}
+.nav-group-item.active, .nav-group-item:active {
+    background-color: var(--main-color) !important;
+    color: white !important;
+}
+.pane-group {
+    font-family: var(--title-font);
+}
+
+input:not([type=range]):not([type=color]) {
+    outline: none;
+    border: 2px solid var(--main-color);
+    border-radius: .7em;
+    font-size: 16px;
+}
+
+input:not([type=range]):not([type=color]):focus {
+    border-radius: .7em;
+    color: white;
+    background-color: var(--main-color);
+    box-shadow: 0 0 6px 3px var(--shadow-color);
+    transition: all .3s linear;
+}
+
+.pane select,
+.pane .btn {
+    border-radius: 0.7em;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.pane .btn:hover {
+    color: white !important;
+    transition: all .3s linear;
+    background-color: var(--main-color);
+}
+
+.label-input-group td:hover {
+    box-shadow: none;
+}
+
+.label-input-group .row:hover {
+    color: black;
+    background-color: white;
+}
+
+#write.enable-diagrams>[mermaid-type=gantt].md-fences:not(.md-focus) {
+    width: inherit !important;
+    margin-left: inherit !important;
+}
+
+/* TODO fix the bug below */
+#footer-word-count-info table, #footer-word-count-info td, #footer-word-count-info tr {
+    border: none!important;
+    background: inherit !important;
+    font-size: 13.5px!important;
+    text-align: left!important;
+    padding: 0;
+    -webkit-user-select: initial;
+    user-select: initial;
+    margin: 0!important;
+    line-height: 1.8;
+}
 
 
 </style><title>寒假作业</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n3"><a class="md-toc-inner" href="#寒假作业大同一中版）">寒假作业（大同一中版）</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n5"><a class="md-toc-inner" href="#提交时间">提交时间</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n11"><a class="md-toc-inner" href="#寒假作业初546版）">寒假作业（初546版）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n12"><a class="md-toc-inner" href="#语文">语文</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n13"><a class="md-toc-inner" href="#山西中考试题汇编-1">山西中考试题汇编</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n20"><a class="md-toc-inner" href="#数学">数学</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n21"><a class="md-toc-inner" href="#山西中考试题汇编-2">山西中考试题汇编</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n22"><a class="md-toc-inner" href="#必做">必做</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n30"><a class="md-toc-inner" href="#选做">选做</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n36"><a class="md-toc-inner" href="#注意事项-1">注意事项</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n66"><a class="md-toc-inner" href="#英语">英语</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n67"><a class="md-toc-inner" href="#山西中考试题汇编可以替换）">山西中考试题汇编（可以替换）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n70"><a class="md-toc-inner" href="#物理">物理</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n71"><a class="md-toc-inner" href="#山西中考试题汇编-3">山西中考试题汇编</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n72"><a class="md-toc-inner" href="#注意事项-2">注意事项</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n81"><a class="md-toc-inner" href="#化学">化学</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n82"><a class="md-toc-inner" href="#山西名师原创试卷">山西名师原创试卷</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n99"><a class="md-toc-inner" href="#全品作业本">全品作业本</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n113"><a class="md-toc-inner" href="#额外题">额外题</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n126"><a class="md-toc-inner" href="#历史">历史</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n127"><a class="md-toc-inner" href="#山西中考试题汇编-4">山西中考试题汇编</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n131"><a class="md-toc-inner" href="#背诵九下笔记">背诵<strong>九下</strong>笔记</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n133"><a class="md-toc-inner" href="#政治">政治</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n134"><a class="md-toc-inner" href="#山西中考试题汇编-5">山西中考试题汇编</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n139"><a class="md-toc-inner" href="#注意事项有任何问题请点击这里这里解决不了的再找我）">注意事项（有任何问题请点击这里，这里解决不了的再找我。）</a></span></p></div><p>&nbsp;</p><h1 id='寒假作业大同一中版）'><span>寒假作业（大同一中版）</span></h1><p><img src="1.png" referrerpolicy="no-referrer" alt="1">
-<img src="2.png" referrerpolicy="no-referrer" alt="2">
-<img src="3.png" referrerpolicy="no-referrer" alt="3">
-<img src="4.png" referrerpolicy="no-referrer" alt="4">
-<img src="5.png" referrerpolicy="no-referrer" alt="5">
-<img src="6.png" referrerpolicy="no-referrer" alt="6"></p><h1 id='提交时间'><span>提交时间</span></h1><ul><li><span>张老师：紫色日期为提交作业时间，绿色为自由安排时间，红色为三天各学科一套真题卷，请同学们做好计划🌹</span></li></ul><p><img src="t1.jpg" referrerpolicy="no-referrer" alt="1"></p><p><img src="t2.jpg" referrerpolicy="no-referrer" alt="2"></p><h1 id='寒假作业初546版）'><span>寒假作业（初546版）</span></h1><h2 id='语文'><span>语文</span></h2><h3 id='山西中考试题汇编-1'><span>山西中考试题汇编</span></h3><ul><li><span>每周两套</span></li><li><span>+？？？</span></li></ul><p>&nbsp;</p><h2 id='数学'><span>数学</span></h2><h3 id='山西中考试题汇编-2'><span>山西中考试题汇编</span></h3><h4 id='必做'><span>必做</span></h4><ol start='' ><li><span>中考真题三套（1，2，3）</span></li><li><span>百校联考三套（7，9，10）</span></li><li><span>把六本课本的</span><strong><span>目录</span></strong><span>贴在九下课本前面</span></li></ol><h4 id='选做'><span>选做</span></h4><ol start='' ><li><span>中考真题（4，5）</span></li><li><span>自主复习</span></li></ol><h3 id='注意事项-1'><span>注意事项</span></h3><ul><li><p><span>前两天</span><strong><span>做，核对，打分，红笔订正</span></strong><span>，第三天</span><strong><span>梳理考点，复盘错题，复习知识点，列表，上传作业</span></strong></p></li><li><p><span>列表示例：（中考题一张，百校联考一张）</span></p><figure><table><thead><tr><th><span>第1题</span></th><th><span>2022</span></th><th><span>2021</span></th></tr></thead><tbody><tr><td><strong><span>第2题</span></strong></td><td><span>考点</span></td><td><span>考点</span></td></tr><tr><td><span>…</span></td><td><mark><span>考点</span></mark><span>（出错）</span></td><td><span>考点</span></td></tr><tr><td><strong><span>第23题</span></strong></td><td><span>考点</span></td><td><span>考点</span></td></tr></tbody></table></figure></li><li><p><strong><span>限时</span></strong><span>100min</span></p></li><li><p><span>分两次上传，周三传一套，周六传一套</span></p></li><li><p><span>一套搞好再搞下一套</span></p></li></ul><p>&nbsp;</p><h2 id='英语'><span>英语</span></h2><h3 id='山西中考试题汇编可以替换）'><span>山西中考试题汇编（可以替换）</span></h3><p>&nbsp;</p><p>&nbsp;</p><h2 id='物理'><span>物理</span></h2><h3 id='山西中考试题汇编-3'><span>山西中考试题汇编</span></h3><h3 id='注意事项-2'><span>注意事项</span></h3><ul><li><span>按</span><strong><span>学校定的</span></strong><span>做</span></li><li><span>每套题</span><strong><span>限时</span></strong><span>1h~1.5h</span></li><li><span>认真核对答案，改正错题</span></li></ul><p>&nbsp;</p><h2 id='化学'><span>化学</span></h2><h3 id='山西名师原创试卷'><span>山西名师原创试卷</span></h3><ol start='' ><li><span>九单元</span></li><li><span>八单元</span></li><li><span>六单元</span></li><li><span>四单元</span></li><li><span>三单元</span></li><li><span>二单元</span></li></ol><ul><li><span>自批自改，红笔标注</span></li></ul><h3 id='全品作业本'><span>全品作业本</span></h3><ol start='' ><li><span>P29</span></li><li><span>P30</span></li><li><span>P31</span></li><li><span>P32</span></li><li><span>P33</span></li><li><span>P34</span></li></ol><h3 id='额外题'><span>额外题</span></h3><ul><li><span>写在</span><strong><span>本上</span></strong></li><li><span>标日期</span></li><li><span>抄题，写过程</span></li><li><span>判，改</span></li><li><span>必须是</span><strong><span>大题</span></strong></li></ul><p>&nbsp;</p><h2 id='历史'><span>历史</span></h2><h3 id='山西中考试题汇编-4'><span>山西中考试题汇编</span></h3><ul><li><span>三套卷子</span></li></ul><h3 id='背诵九下笔记'><span>背诵</span><strong><span>九下</span></strong><span>笔记</span></h3><p>&nbsp;</p><h2 id='政治'><span>政治</span></h2><h3 id='山西中考试题汇编-5'><span>山西中考试题汇编</span></h3><ul><li><span>1，3，5，18，21，22，23</span></li></ul><p>&nbsp;</p><h2 id='注意事项有任何问题请点击这里这里解决不了的再找我）'><span>注意事项（有任何问题请点击这里，这里解决不了的再找我。）</span></h2><ul><li><span>当学校、班级两份作业有冲突时，以</span><strong><span>班级的</span></strong><span>为准。</span></li><li><strong><span>周六晚上十点以前提交，有检查</span></strong></li></ul></div></div>
+<div id='write'  class=''><h1 id='寒假作业列表'><span>寒假作业列表</span></h1><p><span>目录：</span></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n445"><a class="md-toc-inner" href="#寒假作业列表">寒假作业列表</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n450"><a class="md-toc-inner" href="#寒假作业大同一中）">寒假作业（大同一中）</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n457"><a class="md-toc-inner" href="#提交时间">提交时间</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n463"><a class="md-toc-inner" href="#寒假作业初546版）">寒假作业（初546版）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n464"><a class="md-toc-inner" href="#语文">语文</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n465"><a class="md-toc-inner" href="#山西中考试题汇编-1">山西中考试题汇编</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n472"><a class="md-toc-inner" href="#数学">数学</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n473"><a class="md-toc-inner" href="#山西中考试题汇编-2">山西中考试题汇编</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n474"><a class="md-toc-inner" href="#必做">必做</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n482"><a class="md-toc-inner" href="#选做">选做</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n488"><a class="md-toc-inner" href="#注意事项-1">注意事项</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n518"><a class="md-toc-inner" href="#英语">英语</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n519"><a class="md-toc-inner" href="#山西中考试题汇编可以替换）">山西中考试题汇编（可以替换）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n522"><a class="md-toc-inner" href="#物理">物理</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n523"><a class="md-toc-inner" href="#山西中考试题汇编-3">山西中考试题汇编</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n524"><a class="md-toc-inner" href="#注意事项-2">注意事项</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n533"><a class="md-toc-inner" href="#化学">化学</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n534"><a class="md-toc-inner" href="#山西名师原创试卷">山西名师原创试卷</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n551"><a class="md-toc-inner" href="#全品作业本">全品作业本</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n565"><a class="md-toc-inner" href="#额外题">额外题</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n578"><a class="md-toc-inner" href="#历史">历史</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n579"><a class="md-toc-inner" href="#山西中考试题汇编-4">山西中考试题汇编</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n583"><a class="md-toc-inner" href="#背诵九下笔记">背诵<strong>九下</strong>笔记</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n585"><a class="md-toc-inner" href="#政治">政治</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n586"><a class="md-toc-inner" href="#山西中考试题汇编-5">山西中考试题汇编</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n593"><a class="md-toc-inner" href="#注意事项有任何问题请点击这里这里解决不了的再找我）">注意事项（有任何问题请点击这里，这里解决不了的再找我。）</a></span></p></div><p>&nbsp;</p><h1 id='寒假作业大同一中）'><span>寒假作业（大同一中）</span></h1><p><img src="1.png" referrerpolicy="no-referrer" alt="1"></p><p><img src="2.png" referrerpolicy="no-referrer" alt="2"></p><p><img src="3.png" referrerpolicy="no-referrer" alt="3"></p><p><img src="4.png" referrerpolicy="no-referrer" alt="4"></p><p><img src="5.png" referrerpolicy="no-referrer" alt="5"></p><p><img src="6.png" referrerpolicy="no-referrer" alt="6"></p><h1 id='提交时间'><span>提交时间</span></h1><ul><li><span>张老师：紫色日期为提交作业时间，绿色为自由安排时间，红色为三天各学科一套真题卷，请同学们做好计划🌹</span></li></ul><p><img src="t1.jpg" referrerpolicy="no-referrer" alt="1"></p><p><img src="t2.jpg" referrerpolicy="no-referrer" alt="2"></p><h1 id='寒假作业初546版）'><span>寒假作业（初546版）</span></h1><h2 id='语文'><span>语文</span></h2><h3 id='山西中考试题汇编-1'><span>山西中考试题汇编</span></h3><ul><li><span>每周两套</span></li></ul><p>&nbsp;</p><h2 id='数学'><span>数学</span></h2><h3 id='山西中考试题汇编-2'><span>山西中考试题汇编</span></h3><h4 id='必做'><span>必做</span></h4><ol start='' ><li><span>中考真题三套（1，2，3）</span></li><li><span>百校联考三套（7，9，10）</span></li><li><span>把六本课本的</span><strong><span>目录</span></strong><span>贴在九下课本前面</span></li></ol><h4 id='选做'><span>选做</span></h4><ol start='' ><li><span>中考真题（4，5）</span></li><li><span>自主复习</span></li></ol><h3 id='注意事项-1'><span>注意事项</span></h3><ul><li><p><span>前两天</span><strong><span>做，核对，打分，红笔订正</span></strong><span>，第三天</span><strong><span>梳理考点，复盘错题，复习知识点，列表，上传作业</span></strong></p></li><li><p><span>列表示例：（中考题一张，百校联考一张）</span></p><figure><table><thead><tr><th><span>第1题</span></th><th><span>2022</span></th><th><span>2021</span></th></tr></thead><tbody><tr><td><strong><span>第2题</span></strong></td><td><span>考点</span></td><td><span>考点</span></td></tr><tr><td><span>…</span></td><td><mark><span>考点</span></mark><span>（出错）</span></td><td><span>考点</span></td></tr><tr><td><strong><span>第23题</span></strong></td><td><span>考点</span></td><td><span>考点</span></td></tr></tbody></table></figure></li><li><p><strong><span>限时</span></strong><span>100min</span></p></li><li><p><span>分两次上传，周三传一套，周六传一套</span></p></li><li><p><span>一套搞好再搞下一套</span></p></li></ul><p>&nbsp;</p><h2 id='英语'><span>英语</span></h2><h3 id='山西中考试题汇编可以替换）'><span>山西中考试题汇编（可以替换）</span></h3><p>&nbsp;</p><p>&nbsp;</p><h2 id='物理'><span>物理</span></h2><h3 id='山西中考试题汇编-3'><span>山西中考试题汇编</span></h3><h3 id='注意事项-2'><span>注意事项</span></h3><ul><li><span>按</span><strong><span>学校定的作业</span></strong><span>（上面的表格）做</span></li><li><span>每套题</span><strong><span>限时</span></strong><span>1h~1.5h</span></li><li><span>认真核对答案，改正错题</span></li></ul><p>&nbsp;</p><h2 id='化学'><span>化学</span></h2><h3 id='山西名师原创试卷'><span>山西名师原创试卷</span></h3><ol start='' ><li><span>九单元</span></li><li><span>八单元</span></li><li><span>六单元</span></li><li><span>四单元</span></li><li><span>三单元</span></li><li><span>二单元</span></li></ol><ul><li><span>自批自改，红笔标注</span></li></ul><h3 id='全品作业本'><span>全品作业本</span></h3><ol start='' ><li><span>P29</span></li><li><span>P30</span></li><li><span>P31</span></li><li><span>P32</span></li><li><span>P33</span></li><li><span>P34</span></li></ol><h3 id='额外题'><span>额外题</span></h3><ul><li><span>写在</span><strong><span>本上</span></strong></li><li><span>标日期</span></li><li><span>抄题，写过程</span></li><li><span>判，改</span></li><li><span>必须是</span><strong><span>大题</span></strong></li></ul><p>&nbsp;</p><h2 id='历史'><span>历史</span></h2><h3 id='山西中考试题汇编-4'><span>山西中考试题汇编</span></h3><ul><li><span>三套卷子</span></li></ul><h3 id='背诵九下笔记'><span>背诵</span><strong><span>九下</span></strong><span>笔记</span></h3><p>&nbsp;</p><h2 id='政治'><span>政治</span></h2><h3 id='山西中考试题汇编-5'><span>山西中考试题汇编</span></h3><ul><li><span>1，3，5，18，21，22，23</span></li><li><span>钉钉群的“加餐”</span></li></ul><p>&nbsp;</p><h2 id='注意事项有任何问题请点击这里这里解决不了的再找我）'><span>注意事项（有任何问题请点击这里，这里解决不了的再找我。）</span></h2><ul><li><span>当学校、班级两份作业有冲突时，以</span><strong><span>班级的</span></strong><span>为准。</span></li><li><strong><span>周六晚上十点以前提交，有检查</span></strong></li></ul></div></div>
 </body>
 </html>
