@@ -7,3 +7,4 @@
 5. 分享名为SHARE(_?).html
 6. 个人名为ABOUT.html
 7. 所有源文件均上传
+8. 以数字或t+数字命名的图片和homework.html，寒假结束可以删掉
