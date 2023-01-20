@@ -222,7 +222,7 @@ $$D(x) = \begin{cases}
 \end{cases}$$
 ```
 
-====>>>
+===>>>
 
 $$D(x) = \begin{cases}
 \lim\limits_{x \to 0} \frac{a^x}{b+c}, & x<3 \\
