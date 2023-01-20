@@ -204,87 +204,6 @@ mark .md-meta { color: rgb(0, 0, 0); }
 mjx-container { break-inside: avoid; }
 
 
-.CodeMirror { height: auto; }
-.CodeMirror.cm-s-inner { background: inherit; }
-.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
-.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
-.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
-.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
-.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
-.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
-.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
-.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
-.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
-.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
-.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
-.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
-.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
-.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
-.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
-.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
-.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
-.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
-.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
-.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
-.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
-.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
-.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
-.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
-.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
-.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
-.cm-negative { color: rgb(221, 68, 68); }
-.cm-positive { color: rgb(34, 153, 34); }
-.cm-header, .cm-strong { font-weight: 700; }
-.cm-del { text-decoration: line-through; }
-.cm-em { font-style: italic; }
-.cm-link { text-decoration: underline; }
-.cm-error { color: red; }
-.cm-invalidchar { color: red; }
-.cm-constant { color: rgb(38, 139, 210); }
-.cm-defined { color: rgb(181, 137, 0); }
-div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
-div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
-.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
-.CodeMirror { position: relative; overflow: hidden; }
-.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
-.CodeMirror-sizer { position: relative; }
-.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
-.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
-.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
-.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
-.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
-.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
-.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
-.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
-.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
-.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
-.CodeMirror-lines { cursor: text; }
-.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
-.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
-.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
-.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
-.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
-.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
-.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
-.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
-.CodeMirror-measure pre { position: static; }
-.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
-.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
-.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
-.cm-searching { background: rgba(255, 255, 0, 0.4); }
-span.cm-underlined { text-decoration: underline; }
-span.cm-strikethrough { text-decoration: line-through; }
-.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
-.cm-tw-deleted { text-decoration: line-through; }
-.cm-tw-header5 { font-weight: 700; }
-.cm-tw-listitem:first-child { padding-left: 10px; }
-.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
-.cm-tw-underline { text-decoration: underline; }
-@media print {
-  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
-}
-
-
 :root {
     --main-color: rgba(128, 30, 255, 1);
     --shadow-color : rgb(178, 80, 255);
@@ -1340,9 +1259,9 @@ input:not([type=range]):not([type=color]):focus {
 }
 
 
-</style><title>文章</title>
+</style><title>那些年，那些有趣的翻译</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=' first-line-indent'><h1 id='img-src图标png-altlogo-stylezoom7--璃黯的杂货铺'><a href='index.html'><img src="图标.png" alt="Logo" style="zoom:7%;" /></a><span> 璃黯的杂货铺</span></h1><h6 id='首页\t\t文章\t\t分享\t\t更多'><strong><a href='index.html'><code>首页</code></a></strong><span>		</span><a href='文章.html'><code>文章</code></a><span>		</span><a href='分享.html'><code>分享</code></a><span>		</span><a href='更多.html'><code>更多</code></a></h6><hr /><h1 id='文章'><code>文章</code></h1><hr /><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded md-focus" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap CodeMirror-focused" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 8.5px; left: 30px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 26px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style="text-rendering: auto;"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26px; width: 26px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 17px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">欢迎来到文章。</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 17px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">本页面放置整个博客的所有文章。</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 42px;"></div><div class="CodeMirror-gutters" style="height: 42px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 25px;"></div></div></div></div></pre><blockquote><h4 id='那些年那些有趣的翻译'><a href='文章_那些年，那些有趣的翻译.html'><code>那些年，那些有趣的翻译</code></a></h4><h1 id='文章-英语-有趣'><code>文章</code><span> </span><code>英语</code><span> </span><code>有趣</code></h1></blockquote><blockquote><h4 id='简单写写作文素材'><a href='文章_简单写写作文素材.html'><code>简单写写作文素材</code></a></h4><h1 id='文章-作文-素材'><code>文章</code><span> </span><code>作文</code><span> </span><code>素材</code></h1></blockquote><blockquote><h4 id='特殊字母字符集'><a href='文章_特殊字母字符集，昵称利器.html'><code>特殊字母字符集</code></a></h4><h1 id='文章-特殊字母'><code>文章</code><span> </span><code>特殊字母</code></h1></blockquote></div></div>
+<div id='write'  class=' first-line-indent'><h1 id='img-src图标png-altlogo-stylezoom7--璃黯的杂货铺'><a href='index.html'><img src="图标.png" alt="Logo" style="zoom:7%;" /></a><span> 璃黯的杂货铺</span></h1><h6 id='首页\t\t文章\t\t分享\t\t更多'><strong><a href='index.html'><code>首页</code></a></strong><span>		</span><a href='文章.html'><code>文章</code></a><span>		</span><a href='分享.html'><code>分享</code></a><span>		</span><a href='更多.html'><code>更多</code></a></h6><hr /><h1 id='文章'><code>文章</code></h1><h1 id='那些年那些有趣的翻译'><span>那些年，那些有趣的翻译</span></h1><h2 id='1-音译和意译不可兼得）'><span>1. 音译和意译不可兼得（？）</span></h2><p><span>不知道同志们有没有注意到，在英语里，有那么一类翻译，乍一看是音译，但是细细一品，还有意译的感觉。</span></p><p><span>举几个栗子：</span></p><p><img src="https://dl4.weshineapp.com/gif/20170703/7095ecb405a142ad26e08973281922d7.gif?f=micro_5qCX5a2Q" alt="img" style="zoom: 50%;" /></p><h3 id='镭射'><span>镭射</span></h3><p><span>同志们肯定知道激光罢，激光的英文是 Laser 。但是，很久以前， Laser 的中文是它的音译“</span><strong><span>镭射</span></strong><span>”。对比一下“激光”和“镭射”，你会感觉到，镭射既音译又意译了。每当看到“镭射”这个词，脑海中会立马浮想联翩，但“激光”似乎沦为一个学术名词，仅仅是一个名词而已，活力全然没有。</span></p><p><span>有同志心里想，“镭射”这个词太冷门了，现在都见不到了，哪有什么说服力。那好，往下看。</span></p><h3 id='维他命'><span>维他命</span></h3><p><span>维他命水，同志们肯定不陌生。其中的“</span><strong><span>维他命</span></strong><span>”旧指维生素，英文 Vitamin 。旧的翻译“维他命”，既是音译，又可以望文生义（ bushi ）得到“</span><strong><span>维</span></strong><span>持</span><strong><span>他</span></strong><span>的生</span><strong><span>命</span></strong><span>”。不过话说回来，人没了维他命也雀食活不下去。在这方面，“维他命”展现了很好的词义，而“维生素”又成为了一个单纯的名词。</span></p><p><span>有同志又觉得，“维他命”也不咋常用，我不能被你骗了。那好，接着看。</span></p><h3 id='霓虹'><span>霓虹</span></h3><p><strong><span>霓虹灯</span></strong><span>，现在仍然这么说。</span></p><blockquote><p><span>霓虹灯是明亮发光的，充有稀薄氖气或其它稀有气体的通电玻璃管或灯泡，是一种冷阴极气体放电灯。 ——百度百科</span></p></blockquote><p><span>看到了吧，霓虹灯充有氖气，氖气的英文是 Neon ，“霓虹”正是“氖气”的音译。一看到“霓虹灯”，我的脑海里就浮想联翩，但看到“氖光灯”，我的心里却在想是不是有毒。</span></p><p><span>这下，同志们肯定心服口服。</span></p><h3 id='鲁棒性'><span>鲁棒性</span></h3><p><span>同志们听说过</span><strong><span>鲁棒性</span></strong><span>没？估计没。就是听过大概也不知道啥意思。</span></p><blockquote><p><span>鲁棒是 Robust 的音译，也就是健壮和强壮的意思。它也是在异常和危险情况下系统生存的能力。 ——百度百科</span></p></blockquote><p><span>简单说，鲁棒性就是算法对数据的容忍度。同志们肯定大跌眼镜。没错，这就是强行追求音译和意译兼得的后果。翻译成容错率多好哇。。</span></p><h2 id='2-奇形怪状的翻译'><span>2. 奇形怪状的翻译</span></h2><h3 id='句柄'><span>句柄</span></h3><p><span>计算机名词世界里，有一个很重要的词，叫做</span><strong><span>句柄</span></strong><span>。</span></p><blockquote><p><span>句柄（ Handle ）是一个是用来标识对象或者项目的标识符，可以用来描述窗体、文件等。 ——百度百科</span></p></blockquote><p><span>简单说，句柄就是一个 ID ，指向某个物体。如果知道了一个窗口的句柄，就可以对这个窗口为所欲为。</span></p><p><span>但是，光听到句柄这个词，不免让人摸不着头脑。所以，我给它重新取了一个很形象的翻译，叫做把柄。捏住了窗口的把柄，就能为所欲为。（笑）</span></p><h3 id='缺省值'><span>缺省值</span></h3><blockquote><p><span>默认选项，又称缺省值。 ——百度百科</span></p></blockquote><p><span>如你所见，乍一看看不懂的词，一句话就能解释清楚。</span></p><p><span>但是，我还没有想出什么绝妙的翻译，同志们帮我想想呗。</span></p><p><img src="https://dl4.weshineapp.com/gif/20171213/cb6bbfb56a712b00a0faeffba4801aeb.gif?f=micro_" referrerpolicy="no-referrer" alt="img"></p></div></div>
 </body>
 </html>
