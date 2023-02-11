@@ -1,0 +1,78 @@
+在 <head /> 中添加
+
+<link rel="shortcut icon" href="方形图标.png" />
+<metaname='keywords' content='璃黯,Ryan,残霜飞雪,Tseshongfeeshur,个人博客,Markdown'>
+<metaname='description' content='璃黯的杂货铺，一个专注共享的纯 Markdown 个人博客'>
+<style>body { cursor: url(鼠标_常规.png),auto;}a:hover { cursor: url(鼠标_链接.png),auto;}</style>
+<meta http-equiv='content-language' content='zh-cn'>
+
+
+在 <body /> 中添加
+
+<script type="text/javascript" language="javascript">
+{
+var logo =`
+Logo
+                    MMMMM MMM
+                  MMMMMMMMMMMMMMM
+                MMMMMMMMMMMMMMMMMM
+                MMMMMMMMMMMMMMMMMM
+               MMMMMMMMMMMMMMMMMMMM
+                MMMMMMMMMMMMMMMMMMM
+                 MMMMMMMMMMMMMMMMMM
+               M MMMMMMMMMMMMMMMMMM
+                MMMMMMMMMMMMMMMMMM
+                 MMMMMMMMMMMMMMMM
+                   MMMMMMMMMMMMM
+                   MMMMMMMMMMMMM
+                    MMMMMMMMMM
+                   MMMMMMMMMMMMMM
+                  MMMMMMMMMMMMMMM
+                 MMMMMMMMMMMMMMMMM
+                 MMMMMMMMMMMMMMMMM
+                 MMMMMMMMMMMMMMMMMM
+                MMMMMMMMMMMMMMMMMMMMM
+                MMMMMMMMMMMMMMMMMMMMMMM
+               MMMMMMMMMMMMMMMMMMMMMMMMMM
+               MMMMMMMMMMMMMMMM MMMMMMMMMMMM
+              MMMMMMMMMMM  MMMM MMMMMMMMMMMMMMM
+              MMMMMMMMM MM MMMM MMMM  MMMMMMMMMMMMMMM
+             MMMMMMMMM MMMMMMMMMMMMM     MMMMMMMMMMMMMMMMM
+             MMMMMMMMMMMMMMM MMMMMMMM       MMMMMMMMMM
+            MMMMMMM MMM  MMMMMMMMMMMM          MMMMMMM
+           MMMMMMMMMM MMMMMMMMMMMMMMMM            MMMMMM
+            MMMMMMMMMMMMM MMMMMMMMMMMM                MMMM
+             MMMMMMMMMM  M M MMMMMMMMMM
+              MMMMMMMM MMMMM MMMMMMM
+                 MMMMMMMMMMM MMMMM
+                MMMMMMMMMMM MMMMMM
+                MMMMMMMMMMM MMMMMM
+               MMMMMMMMMMMMM MMMMMM
+               MMMMMMMMMMMMM MMMMMM
+               MMMMMMM     MMMMMMMM
+           M   MMMMMMMMMMMMMMMMMMMMM             MM
+ MMMM   MMMMMM MMMMMMMMMMMMMMMMMMMMM MMMMMMMM
+               MMMMMMMMMMMMMMMMMMMMMM   MM   MMMMMMMMM
+  MM   M  MMM MMMMMMMMMMMMMMMMMMMMMMM M MM M MMMM   M
+  MM   M MM M MMMMMMMMMMMMMMMMMMMMM MMMMMMMMMM   M  M
+MMMMMM MM    MM  MMMMMMMMMMMMMMMMM      MM     MMMMMMM
+  MM     MMMM      MMMMMMMMMMMMM      MMMMMM
+  MM     MMMM       MMMMM  MMMMM        MM      MMMMM
+       MM M   M     MMMMM  MMMM         MM     M  M  M
+ MMMM M  MM M M MMMMMMMMMMMMMMMMMMMMM          M  M  M
+      M  MMMMMM MMMMMMMMMMMMMMMMMMMM  M MMM MM  MMMMM
+`
+console.clear();
+console.error("       ██");
+console.error("       ██");
+console.error("       ██");
+console.error("       ██");
+console.error("██     ██     ██");
+console.error("   ██  ██  ██");
+console.error("      ████");
+console.log("%c" + logo, "color:purple");
+console.log("%c “做人一定要昂首挺胸，这样别人才看不见我的双下巴。”", "color:purple");
+console.log("%c        ——Ryan璃黯", "color:purple");
+console.warn("控制台显示不全？调宽点试试←←←");
+}
+</script>
