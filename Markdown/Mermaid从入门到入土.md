@@ -239,8 +239,6 @@ graph LR
     C -->|Two| E[Result two]
 ```
 
-END
-
 ----
 
 全文 Markdown 源码：
@@ -476,7 +474,7 @@ graph LR
 ```
 ````
 
-编写：[陈修竹](https://www.zhihu.com/people/chen-xiu-zhu-37)
+原作者：[陈修竹](https://www.zhihu.com/people/chen-xiu-zhu-37)
 
 编辑&排版整理：璃黯
 

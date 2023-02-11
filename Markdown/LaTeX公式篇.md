@@ -252,11 +252,9 @@ $$\begin{split}
 
 *欢迎关注我的公众号（**个人简介处有微信公众号名称**），一起去寻找文明的痕迹～*
 
-END
-
 ----
 
-编写：[Aaron Zhu](https://www.zhihu.com/people/zhu-guang-hua-520)
+原作者：[Aaron Zhu](https://www.zhihu.com/people/zhu-guang-hua-520)
 
 编辑&排版整理：璃黯
 
