@@ -10,6 +10,7 @@
 <style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
 .mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
 body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
@@ -90,12 +91,14 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
   .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
@@ -172,7 +175,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 @media screen and (max-width: 800px) {
   .typora-export-sidebar { display: none; }
 }
-.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
 .outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
@@ -1264,7 +1267,7 @@ input:not([type=range]):not([type=color]):focus {
 </style><title>知识</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=' first-line-indent'><h1 id='img-src图标png-altlogo-stylezoom7--璃黯的杂货铺'><a href='index.html'><img src="图标.png" alt="Logo" style="zoom:7%;" /></a><span> 璃黯的杂货铺</span></h1><h6 id='首页\t\t文章\t\t分享\t\t更多\t\t留言\t\t时刻'><strong><a href='index.html'><code>首页</code></a></strong><span>		</span><a href='文章.html'><code>文章</code></a><span>		</span><a href='分享.html'><code>分享</code></a><span>		</span><a href='更多.html'><code>更多</code></a><span>		</span><a href='留言.html'><code>留言</code></a><span>		</span><a href='时刻.html'><code>时刻</code></a></h6><hr /><h1 id='分享'><code>分享</code></h1><h6 id='技术\t\t知识'><a href='分享_技术.html'><code>技术</code></a><span>		</span><a href='分享_知识.html'><code>知识</code></a></h6><hr /><h2 id='知识'><code>知识</code></h2><h3 id='快速跳转'><span>快速跳转</span></h3><p><a href='#网站'><code>网站</code></a></p><p><a href='#软件'><code>软件</code></a></p><h1 id='网站'><span>网站</span></h1><h2 id='文化-1'><span>文化</span></h2><ul><li><a href='https://xmsoushu.com/#/'><code>熊猫搜书</code></a><span>—免费的电子书搜索</span></li><li><a href='https://www.allhistory.com/'><code>全历史</code></a><span>—历史学习</span></li><li><a href='https://www.gushici.net/'><code>古诗词网</code></a><span>—诗词学习</span></li></ul><h2 id='工具'><span>工具</span></h2><ul><li><a href='https://www.geogebra.org/calculator'><code>GeoGebra</code></a><span>—动态几何画板</span></li><li><a href='https://www.luogu.com.cn/'><code>洛谷</code></a><span>—编程学习与程序提交</span></li></ul><h2 id='性教育'><span>性教育</span></h2><blockquote><h2 id='严-正-声-明'><strong><span>严 正 声 明</span></strong></h2><p><span>《中华人民共和国刑法》第三百六十七条规定：本法所称淫秽物品，是指具体描绘性行为或者露骨宣扬色情的诲淫性的书刊、影片、录像带、录音带、图片及其他淫秽物品。</span><em><strong><span>有关人体生理、医学知识的科学著作不是淫秽物品。</span></strong></em><span>包含有色情内容的有艺术价值的文学、艺术作品不视为淫秽物品。</span></p></blockquote><ul><li><a href='https://knowsex.net/'><code>知性</code></a><span>—全面而权威的性教育网站</span></li><li><a href='https://space.bilibili.com/30585013'><code>谈性说爱的个人空间_哔哩哔哩</code></a><span>—涉猎广泛，呈现为视频</span></li></ul><h1 id='软件'><span>软件</span></h1><h2 id='文化-2'><span>文化</span></h2><ul><li><p><a href='https://www.coolapk.com/apk/com.hustzp.com.xichuangzhu?t=comment&amp;p=1'><code>西窗烛</code></a><span>—古诗词推荐，诗词句接龙，来自酷安</span></p><ul><li><a href='https://bafybeifwvzl43drlimsw3o4yg2sekl52drzbyqoimrhpfp3sr4oij2v35q.ipfs.dweb.link/西窗烛破解版.apk'><code>破解版（自逆向）</code></a><span>—在验证模块下断点，使用国外直链服务器，可能有点慢</span></li></ul></li></ul><p>&nbsp;</p></div></div>
+<div id='write'  class=' first-line-indent'><h1 id='img-src图标png-altlogo-stylezoom7--璃黯的杂货铺'><a href='index.html'><img src="图标.png" alt="Logo" style="zoom:7%;" /></a><span> 璃黯的杂货铺</span></h1><h6 id='首页\t\t文章\t\t分享\t\t更多\t\t留言\t\t时刻'><strong><a href='index.html'><code>首页</code></a></strong><span>		</span><a href='文章.html'><code>文章</code></a><span>		</span><a href='分享.html'><code>分享</code></a><span>		</span><a href='更多.html'><code>更多</code></a><span>		</span><a href='留言.html'><code>留言</code></a><span>		</span><a href='时刻.html'><code>时刻</code></a></h6><hr /><h1 id='分享'><code>分享</code></h1><h6 id='技术\t\t知识'><a href='分享_技术.html'><code>技术</code></a><span>		</span><a href='分享_知识.html'><code>知识</code></a></h6><hr /><h2 id='知识'><code>知识</code></h2><h3 id='快速跳转'><span>快速跳转</span></h3><p><a href='#网站'><code>网站</code></a></p><p><a href='#软件'><code>软件</code></a></p><h1 id='网站'><span>网站</span></h1><h2 id='文化-1'><span>文化</span></h2><ul><li><p><a href='https://xmsoushu.com/#/'><code>熊猫搜书</code></a><span>—免费的电子书搜索</span></p></li><li><p><a href='https://www.allhistory.com/'><code>全历史</code></a><span>—历史学习</span></p></li><li><p><a href='https://www.gushici.net/'><code>古诗词网</code></a><span>—诗词学习</span></p></li><li><p><a href='http://www.matrix67.com/'><code>Matrix67</code></a><span>—某牛人的博客</span></p></li><li><p><a href='http://yyyyyyyyyyyyyyyyy.com/'><code>17 个为什么</code></a><span>—奇奇怪怪的问题</span></p></li></ul><h2 id='工具'><span>工具</span></h2><ul><li><p><a href='https://www.geogebra.org/calculator'><code>GeoGebra</code></a><span>—动态几何画板</span></p></li><li><p><a href='https://www.luogu.com.cn/'><code>洛谷</code></a><span>—编程学习与程序提交</span></p></li></ul><h2 id='性教育'><span>性教育</span></h2><blockquote><h2 id='严-正-声-明'><strong><span>严 正 声 明</span></strong></h2><p><span>《中华人民共和国刑法》第三百六十七条规定：本法所称淫秽物品，是指具体描绘性行为或者露骨宣扬色情的诲淫性的书刊、影片、录像带、录音带、图片及其他淫秽物品。</span><em><strong><span>有关人体生理、医学知识的科学著作不是淫秽物品。</span></strong></em><span>包含有色情内容的有艺术价值的文学、艺术作品不视为淫秽物品。</span></p></blockquote><ul><li><p><a href='https://knowsex.net/'><code>知性</code></a><span>—全面而权威的性教育网站</span></p></li><li><p><a href='https://space.bilibili.com/30585013'><code>谈性说爱的个人空间_哔哩哔哩</code></a><span>—涉猎广泛，呈现为视频</span></p></li></ul><h1 id='软件'><span>软件</span></h1><h2 id='文化-2'><span>文化</span></h2><ul><li><p><a href='https://www.coolapk.com/apk/com.hustzp.com.xichuangzhu?t=comment&amp;p=1'><code>西窗烛</code></a><span>—古诗词推荐，诗词句接龙，来自酷安</span></p><ul><li><p><a href='https://bafybeifwvzl43drlimsw3o4yg2sekl52drzbyqoimrhpfp3sr4oij2v35q.ipfs.dweb.link/西窗烛破解版.apk'><code>破解版（自逆向）</code></a><span>—在验证模块下断点，使用国外直链服务器，可能有点慢</span></p></li></ul></li></ul><p>&nbsp;</p></div></div>
 <script type="text/javascript" language="javascript">
 {
 var logo =`
