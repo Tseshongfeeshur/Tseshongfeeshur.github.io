@@ -2,7 +2,7 @@
 
 <link rel="shortcut icon" href="方形图标.png" />
 <metaname='keywords' content='璃黯,Ryan,残霜飞雪,Tseshongfeeshur,个人博客,Markdown'>
-<metaname='description' content='璃黯的杂货铺，一个专注共享的纯 Markdown 个人博客'>
+<metaname='description' content='璃黯天书，一个专注共享的纯 Markdown 个人博客'>
 <style>body { cursor: url(鼠标_常规.png),auto;}a:hover { cursor: url(鼠标_链接.png),auto;}</style>
 <meta http-equiv='content-language' content='zh-cn'>
 
